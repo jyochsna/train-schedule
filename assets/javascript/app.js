@@ -22,12 +22,19 @@ var firebaseConfig = {
       var firstTime = $("first-time").val().trim();
       var frequency = $("#frequency").val().trim();
 
+      var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "days");
+      var currentTime = moment();
+      var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+      var tRemainder = diffTime % tFrequency;
+      var tMinutesTillTrain = tFrequency - tRemainder;
+      var nextTrain = moment().add(tMinutesTillTrain, "minutes");
       daraRef.ref().push({
     
         trainName,
         destination,
-        firstTime,
         frequency,
+        nextTrain,
+        tMinutesTillTrain
 
-      })
-  })
+      });
+  });
