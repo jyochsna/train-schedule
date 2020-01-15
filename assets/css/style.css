@@ -1,0 +1,14 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("../images/background.jpg");
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.jumbotron{
+    background-color: chocolate;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+}
