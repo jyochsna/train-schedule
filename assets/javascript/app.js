@@ -8,27 +8,44 @@ var firebaseConfig = {
   appId: "1:797569406143:web:ed7f00036439f40fc5e20a",
   measurementId: "G-QP30MVR9NR"
 };
+  firebase.initializeApp(firebaseConfig);
   var dataRef = firebase.database();
 
   $("#submit").on("click", function(event){
       event.preventDefault();
 
-      var trainName = $("train-name").val().trim();
-      var destination = $("#destination").val().trim();
-      var firstTime = $("first-time").val().trim();
-      var frequency = $("#frequency").val().trim();
-
+      //grab user input
+      var trainName = $("train-name").val();
+      var destination = $("#destination").val();
+      var firstTime = $("first-time").val();
+      var frequency = $("#frequency").val();
+    
+      // var newTrain = {
+      //   name: trainName,
+      //   place: destination,
+      //   time: firstTime,
+      //   speed: frequency
+      // };
      
       dataRef.ref().push({
-    
-        trainName,
-        destination,
-        firstTime,
-        frequency,
-        nextTrain,
-        tMinutesTillTrain
+        trainName: trainName,
+          destination: destination,
+          firstTime: firstTime,
+          frequency: frequency
+         
+      
+  
 
       });
+  
+      //   trainName,
+      //   destination,
+      //   firstTime,
+      //   frequency,
+      //   nextTrain,
+      //   tMinutesTillTrain
+
+      // });
       console.log(trainName);
       console.log(destination);
 
@@ -40,20 +57,20 @@ var firebaseConfig = {
       $("#first-time").val("");
       $("#frequency").val("");
   });
-  database.ref().on("child_added", function (childSnapshot) {
+  dataRef.ref().on("child_added", function (childSnapshot) {
     console.log(childSnapshot.val());
 
     //store everything into a variable.
-    var trainName = childSnapshot.val().name;
-    var destination = childSnapshot.val().dest;
-    var firstTime = childSnapshot.val().time;
-    var frequency = childSnapshot.val().freq;
+    var trainName = childSnapshot.val().trainName;
+    var destination = childSnapshot.val().destination;
+    var firstTime = childSnapshot.val().firstTime;
+    var frequency = childSnapshot.val().frequency;
 
     // train info
     console.log(trainName);
     console.log(destination);
 
-    var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+    var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "days");
     var currentTime = moment();
     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
     var tRemainder = diffTime % tFrequency;
@@ -68,6 +85,6 @@ var firebaseConfig = {
       $("<td>").text(tMinutesTillTrain),
 
     );
-    $("#trainbody").append(addRow);
+    $("#train-table > tbody").append(addRow);
 });
 
