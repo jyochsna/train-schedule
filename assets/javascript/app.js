@@ -15,9 +15,9 @@ var firebaseConfig = {
       event.preventDefault();
 
       //grab user input
-      var trainName = $("train-name").val();
+      var trainName = $("#train-name").val();
       var destination = $("#destination").val();
-      var firstTime = $("first-time").val();
+      var firstTime = $("#first-time").val();
       var frequency = $("#frequency").val();
     
       // var newTrain = {
