@@ -73,8 +73,8 @@ var firebaseConfig = {
     var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "days");
     var currentTime = moment();
     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-    var tRemainder = diffTime % tFrequency;
-    var tMinutesTillTrain = tFrequency - tRemainder;
+    var tRemainder = diffTime % frequency;
+    var tMinutesTillTrain = frequency - tRemainder;
     var nextTrain = moment().add(tMinutesTillTrain, "minutes");
 
     var addRow = $("<tr>").append(
