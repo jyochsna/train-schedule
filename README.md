@@ -7,5 +7,18 @@ This is a firebase application to accept input from user to create a fictional t
 https://jyochsna.github.io/train-schedule
 
 ## App Images
-#### Schedule Train
+#### Schedule Train 
 ![](assets/images/trainschedule.JPG)
+
+#### Add Train Form
+![](assets/images/addtrain.JPG)
+
+#### Firebase Data
+![](assets/images/firebase.JPG)
+
+## Technologies Used
+* Google Font
+* jQuery
+* Firebase
+
+Copyright &copy; 2020 | Jyochsna Gongal
