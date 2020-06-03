@@ -3,12 +3,13 @@
 }
 
 body {
-  background-image: url("../images/background.jpg");
+    background-color: rgb(191, 203, 224);
+  /* background-image: url("../images/background.jpg"); */
   font-family: "Roboto", sans-serif;
 }
 
 .jumbotron {
-  background-color: rgb(14, 195, 219);
+  background-color: rgb(139, 176, 231);
   text-align: center;
   font-family: "Bubblegum Sans", cursive;
 }
