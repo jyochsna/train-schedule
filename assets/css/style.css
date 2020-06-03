@@ -4,11 +4,11 @@
 
 body {
   background-image: url("../images/background.jpg");
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .jumbotron {
   background-color: rgb(14, 195, 219);
   text-align: center;
-  font-family: "Roboto Slab", serif;
+  font-family: "Bubblegum Sans", cursive;
 }
