@@ -6,5 +6,5 @@ This is a firebase application to accept input from user to create a fictional t
 ## Getting Started
 https://jyochsna.github.io/train-schedule
 
-## ScreenShot
-![results](assets/images/train.gif)
+## App Images
+![](assets/images/trainschedule.JPG)
